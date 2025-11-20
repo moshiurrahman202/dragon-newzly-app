@@ -16,7 +16,8 @@ const Router = createBrowserRouter([
             },
             {
                 path: "/category/:id",
-                Component: CategoryNews
+                Component: CategoryNews,
+                loader: () => fetch("https://raw.githubusercontent.com/moshiurrahman202/Json_file_for_fetch/refs/heads/main/newzly_news.json").then(res => res.json())
             }
         ]
     },
