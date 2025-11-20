@@ -4,8 +4,8 @@ import user_log from "../assets/user.png"
 const NavBar = () => {
     return (
         <div className="flex justify-between items-center">
-            <div></div>
-            <div className="nav flex gap-6">
+            <div className=""></div>
+            <div className="nav flex gap-6 text-accent">
                 <NavLink to="/">Home</NavLink>
                 <NavLink to="/about">About</NavLink>
                 <NavLink to="/career">Career</NavLink>
