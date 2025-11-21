@@ -18,7 +18,7 @@ const HomeLaout = () => {
                     <NavBar></NavBar>
                 </nav>
             </header>
-            <main className='w-11/12 mx-auto my-4 grid grid-cols-12'>
+            <main className='w-11/12 mx-auto my-4 grid grid-cols-12 gap-4'>
                 <aside className='left_nav col-span-3'>
                     <LeftAside></LeftAside>
                 </aside>

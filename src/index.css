@@ -19,7 +19,7 @@
     font-family: "Poppins", sans-serif;
 }
 
-a.active {
+aside a.active {
     background-color: #E7E7E7;
     color: #706F6F;
 }

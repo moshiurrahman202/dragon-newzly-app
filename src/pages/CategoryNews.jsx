@@ -1,4 +1,5 @@
 import { useLoaderData, useParams } from "react-router";
+import NewsCard from "../components/NewsCard";
 
 
 const CategoryNews = () => {
@@ -15,11 +16,16 @@ const CategoryNews = () => {
   else {
     news = data.filter(item => item.category_id == id);
   }
+console.log(news);
 
     return (
         <div>
-
-            <h1>category news{news.length}</h1>
+            <h1 className="font-bold">Dragon News Home</h1>
+            <div className="grid grid-cols-1 gap-2">
+              {
+                  news.map(mnews => <NewsCard key={mnews.id} news={mnews}></NewsCard>)
+              }
+            </div>
 
         </div>
     );
