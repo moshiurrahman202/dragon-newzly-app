@@ -8,7 +8,7 @@ const AuthLaout = () => {
             <header className="w-11/12 mx-auto py-5">
                 <NavBar></NavBar>
             </header>
-            <main className="w-11/12 mx-auto py-5"><p>outlet</p><Outlet></Outlet></main>
+            <main className="w-11/12 mx-auto py-5"><Outlet></Outlet></main>
             
         </div>
     );
