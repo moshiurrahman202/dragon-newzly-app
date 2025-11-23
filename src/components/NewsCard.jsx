@@ -1,5 +1,6 @@
 import { FaShareAlt } from "react-icons/fa";
 import { BsBookmark } from "react-icons/bs";
+import { Link } from "react-router";
 export default function NewsCard({ news }) {
   return (
     <div className=" rounded-2xl p-4 shadow-md space-y-3">
@@ -37,6 +38,7 @@ export default function NewsCard({ news }) {
       {/* Details (shortened) */}
       <p className="text-sm text-gray-600">
         {news.details.slice(0, 180)}...
+        <Link className="underline text-blue-500" to={`/newsDetails/${news.id}`}>See More</Link>
       </p>
 
       {/* Footer */}
