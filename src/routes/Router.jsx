@@ -8,7 +8,7 @@ import AuthLaout from "../laouts/AuthLaout";
 import NewsDetail from "../pages/NewsDetails";
 import NewsDetails from "../pages/NewsDetails";
 
-
+const fetchData = () => fetch("https://raw.githubusercontent.com/moshiurrahman202/Json_file_for_fetch/refs/heads/main/newzly_news.json").then(res => res.json());
 const Router = createBrowserRouter([
     {
         path: "/",
@@ -22,7 +22,7 @@ const Router = createBrowserRouter([
             {
                 path: "category/:id",
                 Component: CategoryNews,
-                loader: () => fetch("https://raw.githubusercontent.com/moshiurrahman202/Json_file_for_fetch/refs/heads/main/newzly_news.json").then(res => res.json())
+                loader: fetchData
             }
         ]
     },
@@ -42,7 +42,8 @@ const Router = createBrowserRouter([
     },
     {
         path: "/newsDetails/:id",
-        Component: NewsDetails
+        Component: NewsDetails,
+        loader: fetchData
     },
     {
         path: "/*",
