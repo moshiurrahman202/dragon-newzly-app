@@ -1,21 +1,23 @@
 import { use, useState } from "react";
-import { Link, useNavigate } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../provider/AuthProvider";
 
 
 const Login = () => {
   const [error, setError] = useState("")
   const { logIn } = use(AuthContext)
+  const location = useLocation()
   const navigate = useNavigate()
   const handleLogIn = e => {
     e.preventDefault()
+    setError("")
     const email = e.target.email.value;
     const pass = e.target.password.value;
     console.log(email, pass);
     
     logIn(email, pass)
     .then(userCredential => {
-      navigate("/")
+      navigate(`${location.state ? location.state : "/"} `)
       console.log(userCredential.user.email, "Signed in");
       
     })
