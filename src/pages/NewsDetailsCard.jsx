@@ -7,7 +7,7 @@ const NewsDetailsCard = ({ detailNews }) => {
     
     return (
         <div className="space-y-5">
-            <img src={detailNews.image_url} alt="details news image" />
+            <img className="w-full object-cover" src={detailNews.image_url} alt="details news image" />
             <h1 className="font-bold">{detailNews.title}</h1>
             <p>{detailNews.details
             }</p>

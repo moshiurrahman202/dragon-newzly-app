@@ -5,8 +5,8 @@ import CategoryNews from "../pages/CategoryNews";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import AuthLaout from "../laouts/AuthLaout";
-import NewsDetail from "../pages/NewsDetails";
 import NewsDetails from "../pages/NewsDetails";
+import PrivateRoute from "../provider/PrivateRoute";
 
 const fetchData = () => fetch("https://raw.githubusercontent.com/moshiurrahman202/Json_file_for_fetch/refs/heads/main/newzly_news.json").then(res => res.json());
 const Router = createBrowserRouter([
@@ -32,7 +32,7 @@ const Router = createBrowserRouter([
         children: [
             {
                 path: "/auth/login",
-                Component: Login
+                element: <Login></Login>
             },
             {
                 path: "/auth/register",
@@ -42,7 +42,7 @@ const Router = createBrowserRouter([
     },
     {
         path: "/newsDetails/:id",
-        Component: NewsDetails,
+        element: <PrivateRoute><NewsDetails></NewsDetails></PrivateRoute>,
         loader: fetchData
     },
     {
