@@ -1,5 +1,5 @@
 import React from 'react';
-import { Outlet } from 'react-router';
+import { Outlet, useNavigation } from 'react-router';
 import Header from '../components/Header';
 import LatestNews from '../components/LatestNews';
 import NavBar from '../components/NavBar';
@@ -7,6 +7,7 @@ import LeftAside from './LeftAside';
 import RightAside from './RightAside';
 
 const HomeLaout = () => {
+    const { state } = useNavigation()
     return (
         <div>
             <header className='pt-5'>
@@ -23,13 +24,13 @@ const HomeLaout = () => {
                     <LeftAside></LeftAside>
                 </aside>
                 <section className='main col-span-6'>
-                    <Outlet></Outlet>
+                    {state === "loading" ? <div className='w-full flex justify-center items-center'><span className="loading loading-bars loading-xl"></span></div> : <Outlet></Outlet>}
                 </section>
                 <aside className='right_nav col-span-3 sticky top-0 h-fit'>
                     <RightAside></RightAside>
                 </aside>
             </main>
-            
+
         </div>
     );
 };
