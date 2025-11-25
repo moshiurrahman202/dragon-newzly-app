@@ -17,12 +17,12 @@ const Login = () => {
     setError("")
     const email = e.target.email.value;
     const pass = e.target.password.value;
-    console.log(email, pass);
+    // console.log(email, pass);
 
     logIn(email, pass)
       .then(userCredential => {
         navigate(`${location.state ? location.state : "/"} `)
-        console.log(userCredential.user.email, "Signed in");
+        console.log( "Signed in");
 
       })
       .catch(err => {

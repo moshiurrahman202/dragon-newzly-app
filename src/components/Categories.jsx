@@ -5,7 +5,7 @@ const categoryPromice = fetch("https://raw.githubusercontent.com/moshiurrahman20
 
 const Categories = () => {
     const categories = use(categoryPromice)
-    console.log(categories);
+    // console.log(categories);
 
     return (
         <div>

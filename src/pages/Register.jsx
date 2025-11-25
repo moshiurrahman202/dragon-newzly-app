@@ -2,13 +2,13 @@ import { use, useState } from "react";
 import { Link, useNavigate } from "react-router";
 import { AuthContext } from "../provider/AuthProvider";
 import { ToastContainer, toast } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 
 
 const Register = () => {
     const [error, setError] = useState("")
     const { createUser, updateUser, sendVarificationEmail } = use(AuthContext)
     const navigate = useNavigate()
-    const notify = () => toast('Email verification sent!');
     const formHandler = e => {
         e.preventDefault()
         setError("")
@@ -23,11 +23,11 @@ const Register = () => {
             createUser(email, pass)
                 .then(res => {
                     const user = res.user
-                    console.log(user);
-                    navigate("/")
+                    console.log("this is from register",user);
+                    
                     sendVarificationEmail()
                     .then(() => {
-                        notify()
+                        toast(`${name} We sent Email verification !`)
                         
                     })
                     .catch(err => {
@@ -43,6 +43,7 @@ const Register = () => {
                         console.log(err);
                         
                     })
+                    navigate("/")
                 })
                 .catch(err => {
                     setError(err.code)

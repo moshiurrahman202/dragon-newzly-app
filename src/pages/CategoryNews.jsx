@@ -16,7 +16,7 @@ const CategoryNews = () => {
   else {
     news = data.filter(item => item.category_id == id);
   }
-console.log(news);
+// console.log(news);
 
     return (
         <div>
