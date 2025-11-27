@@ -8,7 +8,6 @@ const NavBar = () => {
     const {user, logOut} = use(AuthContext)
     const {displayName} =user
     const userName = displayName.toUpperCase()
-    console.log(userName);
     
     
     const handleLogOut = () => {
