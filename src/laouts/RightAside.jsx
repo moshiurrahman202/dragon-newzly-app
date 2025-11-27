@@ -1,12 +1,15 @@
+import { use } from "react";
 import FindUs from "./FindUs";
 import Qzone from "./Qzone";
 import SocialLogin from "./SocialLogin";
+import { AuthContext } from "../provider/AuthProvider";
 
 
 const RightAside = () => {
+    const {user} = use(AuthContext)
     return (
         <div className="space-y-5">
-            <SocialLogin></SocialLogin>
+            {!user && <SocialLogin></SocialLogin>}
             <FindUs></FindUs>
             <Qzone></Qzone>
         </div>
