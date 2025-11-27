@@ -6,8 +6,6 @@ import { AuthContext } from "../provider/AuthProvider";
 
 const NavBar = () => {
     const {user, logOut} = use(AuthContext)
-    const {displayName} =user
-    const userName = displayName.toUpperCase()
     
     
     const handleLogOut = () => {
@@ -31,7 +29,7 @@ const NavBar = () => {
                 <NavLink to="/career">Career</NavLink>
             </div>
             <div className="flex gap-3 items-center">
-                {user && <p className="text-sm text-green-600">{userName}</p>}
+                {user && <p className="text-sm text-green-600">{user.displayName.toUpperCase()}</p>}
                 <img src={user_log} alt="user logo" />
                 {user ? <buttom onClick={handleLogOut} className="btn btn-primary px-8">LogOut</buttom> : <Link to="/auth/login" className="btn btn-primary px-8">Login</Link>}
                 
