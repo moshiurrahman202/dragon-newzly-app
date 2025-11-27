@@ -20,7 +20,7 @@ const Login = () => {
     // console.log(email, pass);
 
     logIn(email, pass)
-      .then(userCredential => {
+      .then(()=> {
         navigate(`${location.state ? location.state : "/"} `)
         console.log( "Signed in");
 

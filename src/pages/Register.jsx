@@ -21,9 +21,9 @@ const Register = () => {
             return
         } else {
             createUser(email, pass)
-                .then(res => {
-                    const user = res.user
-                    console.log("this is from register",user);
+                .then(() => {
+                    // const user = res.user
+                    // console.log("this is from register",user);
                     
                     sendVarificationEmail()
                     .then(() => {
