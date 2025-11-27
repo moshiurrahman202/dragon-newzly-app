@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="News icon">
+  <!-- Background rounded square -->
+  <rect x="1" y="1" width="62" height="62" rx="10" ry="10" fill="#0ea5a4"/>
+
+  <!-- Newspaper white card -->
+  <g transform="translate(9,10)">
+    <rect x="0" y="0" width="46" height="36" rx="3" ry="3" fill="#ffffff"/>
+    <!-- folded corner -->
+    <path d="M46 0 L36 0 L46 10 Z" fill="#e6f7f6"/>
+    <!-- avatar circle -->
+    <circle cx="8" cy="8" r="4" fill="#0ea5a4"/>
+    <!-- headline line -->
+    <rect x="16" y="4" width="24" height="4" rx="2" fill="#0ea5a4"/>
+    <!-- small text lines -->
+    <rect x="4" y="18" width="38" height="3" rx="1.5" fill="#cfeeea"/>
+    <rect x="4" y="24" width="38" height="3" rx="1.5" fill="#cfeeea"/>
+    <rect x="4" y="30" width="26" height="3" rx="1.5" fill="#cfeeea"/>
+  </g>
+</svg>
